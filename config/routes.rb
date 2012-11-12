@@ -1,10 +1,9 @@
 ToDont::Application.routes.draw do
 
   resources :lists do
-    # member do
       resources :tasks
-    # end
   end
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

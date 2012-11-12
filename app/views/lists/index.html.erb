@@ -5,6 +5,7 @@
 <tr>
   <th><%= list.title %></th>
   <th><%= link_to 'See', list_path(list.id) %>
+  <th><%= link_to 'Add', new_list_task_path(list.id) %>
   <th></th>
 <% end %>
 </tr>
