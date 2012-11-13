@@ -1,10 +1,12 @@
 <h1><%= best_in_place @list, :title %></h1>
   <thead>Tasks</thead> 
-  <table class = "table table-hover">  
-    <% @tasks.each do |task| %>
+    <table class = "table table-hover">  
+      <% @tasks.each do |task| %>
 			<tr>
-    		<td><%= best_in_place task, :description, :action => :post, :path => edit_list_task_path(@list, task) %></td>
-      	<td style = "text-align:right;"><%= link_to "Edit", edit_list_task_path(@list, task)%>  <%= link_to "Delete", list_task_path(@list, task), :method => :delete %></td>
+    		<td><%= best_in_place task, :description, :path => list_task_path(@list, task) %></td>
+      	<td><button type="button" class="btn btn-danger" data-toggle="collapse" data-target="#demo">^</button></td>
+</button></td>
+      	<td style = "text-align:right;"><%= link_to "Delete", list_task_path(@list, task), :method => :delete %></td>
 			</tr>
   	<% end %>
 	</table>
@@ -15,3 +17,32 @@
 <%= link_to 'New Task', new_list_task_path(@list), :method => :get %>
 <br>
 <%= link_to 'Lists', lists_path %>
+
+
+<!== ACCORDION CODE BEGINS HERE
+<div class="accordion" id="accordion2">
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+        Collapsible Group Item #1
+      </a>
+    </div>
+    <div id="collapseOne" class="accordion-body collapse in">
+      <div class="accordion-inner">
+        Anim pariatur cliche...
+      </div>
+    </div>
+  </div>
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+        Collapsible Group Item #2
+      </a>
+    </div>
+    <div id="collapseTwo" class="accordion-body collapse">
+      <div class="accordion-inner">
+        Anim pariatur cliche...
+      </div>
+    </div>
+  </div>
+</div>

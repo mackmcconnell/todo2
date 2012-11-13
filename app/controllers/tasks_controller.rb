@@ -1,4 +1,5 @@
 class TasksController < ApplicationController
+  respond_to :html, :json
 
   def index
     redirect_to list_path(params[:list_id])
@@ -35,13 +36,9 @@ class TasksController < ApplicationController
     @list = List.find(params[:list_id])
     @task = Task.find(params[:id])
     @task.update_attributes(params[:task])
-    @task.save
-    redirect_to @list
+    respond_with @list
   end
   
-  def description
-    @task.description
-  end
 end
 
 
