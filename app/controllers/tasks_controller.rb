@@ -4,10 +4,6 @@ class TasksController < ApplicationController
     redirect_to list_path(params[:list_id])
   end
 
-  # def new
-  #   @task = Task.new
-  # end
-  
   def new
     @list = List.find(params[:list_id])
     @task = Task.new
@@ -31,7 +27,20 @@ class TasksController < ApplicationController
   end
   
   def edit
+    @list = List.find(params[:list_id])
     @task = Task.find(params[:id])
+  end
+  
+  def update
+    @list = List.find(params[:list_id])
+    @task = Task.find(params[:id])
+    @task.update_attributes(params[:task])
+    @task.save
+    redirect_to @list
+  end
+  
+  def description
+    @task.description
   end
 end
 

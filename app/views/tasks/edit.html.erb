@@ -1,0 +1,8 @@
+<h1><%= @task.description %></h1>
+
+<%= form_for [@list, @task] do |f| %>
+  <%= f.label :edit %>
+	<%= f.text_field :description %>
+<%= f.submit 'Submit' %>
+<% end %>
+
