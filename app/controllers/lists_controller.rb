@@ -11,12 +11,18 @@ class ListsController < ApplicationController
 
   def create
     @list = List.new(params[:list])
-    redirect_to lists_path if @list.save
+    if @list.save
+      redirect_to lists_path
+    else
+      redirect_to lists_path
+      flash[:notice] = "You need a list name, chump"
+    end
   end
 
   def show
     @list = List.find(params[:id])
     @tasks = @list.tasks.all
+    @task = Task.new
   end
   
   def edit
