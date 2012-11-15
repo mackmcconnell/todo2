@@ -1,6 +1,6 @@
 class ListsController < ApplicationController
   respond_to :html, :json
-  
+
   def index
     @lists = List.all
   end
@@ -16,20 +16,22 @@ class ListsController < ApplicationController
 
   def show
     @list = List.find(params[:id])
-    @tasks = @list.tasks.all
+    @tasks = @list.tasks.active
   end
-  
+
   def edit
     @list = List.find(params[:id])
   end
-  
+
   def update
     @list = List.find(params[:id])
     @list.update_attributes(params[:list])
     respond_with @list
   end
-  
+
   def deleted_tasks
+    @list = List.find(params[:id])
+    @tasks = @list.tasks.inactive
   end
 
 end

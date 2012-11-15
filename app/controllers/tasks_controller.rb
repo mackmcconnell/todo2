@@ -14,6 +14,7 @@ class TasksController < ApplicationController
     @list = List.find(params[:list_id])
     @task = Task.new(params[:task])
     @task.list_id = @list.id
+    @task.alive = "yes"
     # redirect_to list_path(params[:list_id]) if @task.save!
     if @task.save
       respond_to do |format|
@@ -28,8 +29,13 @@ class TasksController < ApplicationController
 
   def destroy
     @list = List.find(params[:list_id])
-    @task = @list.tasks.find(params[:id])
-    redirect_to @list if @task.destroy
+    @tasks = @list.tasks.active
+
+    @task = Task.find(params[:id])
+    @task.update_attribute(:alive, "no")
+    respond_to do |format|
+      format.js { render 'delete.js.erb' }
+    end
   end
 
   def edit

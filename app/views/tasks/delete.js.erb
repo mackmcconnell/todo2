@@ -1,0 +1,5 @@
+$('#row_<%=dom_id(@task)%>').remove("<%= j(render :partial => '/lists/list', :locals => { :task => @task }) %>")
+$(console.log("<%= @list.tasks.count %>"))
+
+
+// $('.table').append("<%= j(render :partial => 'row', :locals => { :task => @task }) %>")
