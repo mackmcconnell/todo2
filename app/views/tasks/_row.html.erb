@@ -1,0 +1,4 @@
+<tr>
+  <td><%= best_in_place task, :description, :path => list_task_path(@list, task), :method => "put" %></td>
+  <td style = "text-align:right;"><%= link_to '', list_task_path(@list, task), :method => "delete", :class => 'icon-ok' %></td>
+</tr>
