@@ -1,20 +1,26 @@
 
 <h1><%= best_in_place @list, :title %></h1>
+<div class = "form_container">
+  <div class = "form">
+    <%= render 'tasks/form' %>
+  </div>
+  <div class = "completed_tasks">
+    <%= button_to 'Completed Tasks', {:action => 'deleted_tasks'}, :method => :get, :class => "btn btn-primary"  %>
+  </div>
+</div>
 
-<%= render 'tasks/form' %>
 
-  <thead>Tasks</thead>
+
+
     <table class = "table table-hover">
       <% @tasks.each do |task| %>
-
       <tr>
         <td><%= best_in_place task, :description, :path => list_task_path(@list, task), :method => "put" %></td>
         <td style = "text-align:right;"><%= link_to '', list_task_path(@list, task), :method => "delete", :class => 'icon-ok' %></td>
       </tr>
-
-
     <% end %>
   </table>
+
 
 
 <%= link_to 'New Task', new_list_task_path(@list), :method => :get %>

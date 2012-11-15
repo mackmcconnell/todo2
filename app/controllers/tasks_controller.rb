@@ -23,7 +23,7 @@ class TasksController < ApplicationController
 
   def destroy
     @list = List.find(params[:list_id])
-    @task= @list.tasks.find(params[:id])
+    @task = @list.tasks.find(params[:id])
     redirect_to @list if @task.destroy
   end
 
@@ -38,6 +38,7 @@ class TasksController < ApplicationController
     @task.update_attributes(params[:task])
     respond_with @list
   end
+
 
 end
 

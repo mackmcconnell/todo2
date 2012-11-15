@@ -28,5 +28,8 @@ class ListsController < ApplicationController
     @list.update_attributes(params[:list])
     respond_with @list
   end
+  
+  def deleted_tasks
+  end
 
 end
