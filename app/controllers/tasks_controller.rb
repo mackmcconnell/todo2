@@ -26,19 +26,19 @@ class TasksController < ApplicationController
     @task= @list.tasks.find(params[:id])
     redirect_to @list if @task.destroy
   end
-  
+
   def edit
     @list = List.find(params[:list_id])
     @task = Task.find(params[:id])
   end
-  
+
   def update
     @list = List.find(params[:list_id])
     @task = Task.find(params[:id])
     @task.update_attributes(params[:task])
     respond_with @list
   end
-  
+
 end
 
 
