@@ -12,7 +12,8 @@
   <% end %>
 
   <div class = "fields">
-    <%= f.text_field :description, :placeholder => "New Task" %> <%= f.text_field :description, :placeholder => "Date (optional)" %>
+    <%= f.text_field :description, :placeholder => "New Task" %> <%= f.text_field :date, :placeholder => DateTime.now.strftime('%m-%d-%Y') %>
       <button type="submit" class="btn" style = "margin-bottom: 10px; margin-left: 4px;"><i class="icon-plus-sign"></i></button>
   </div>
+  
 <% end %>

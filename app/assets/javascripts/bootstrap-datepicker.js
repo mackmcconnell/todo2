@@ -452,3 +452,14 @@
 						'</div>';
 
 }( window.jQuery )
+$(document).ready(function() {
+  $('#task_date').datepicker({
+	    format: 'mm-dd-yyyy'
+	});
+});
+
+$('.date').datepicker().on('changeDate', hideDatepickers);
+function hideDatepickers(){
+$('.datepicker.dropdown-menu').hide();
+};
+
