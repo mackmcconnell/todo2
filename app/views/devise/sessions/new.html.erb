@@ -1,0 +1,31 @@
+<div class = "centerfy">
+<h2>Sign inz</h2>
+
+<br>
+
+  <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+    <div>
+      <%= f.email_field :email, :placeholder => "Email" %>
+    </div>
+
+    <div>
+      <%= f.password_field :password, :placeholder => "Password" %>
+    </div>
+
+    <% if devise_mapping.rememberable? -%>
+      <button type="submit" class="btn btn-success">Login</button>
+        <div class = "checkbox-unit">
+          <div class = "checkbox">
+            <%= f.check_box :remember_me %>
+          </div>
+          <div class = "remember-me">
+            <%= f.label :remember_me %>
+          </div>
+        </div>
+    <% end -%>
+<br>
+
+  <% end %>
+
+  <%= render "devise/shared/links" %>
+</div>
