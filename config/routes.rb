@@ -1,11 +1,15 @@
 ToDont::Application.routes.draw do
 
+  devise_for :users
+
   resources :lists do
     resources :tasks
   end
   
   get "/lists/:id/deleted" => "lists#deleted_tasks", :as => "deleted_tasks"
-  delete "/lists/:id/deleted" => "lists#deleted_tasks", :as => "deleted_tasks"
+
+  
+  root :to => "lists#index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
