@@ -5,6 +5,7 @@ ToDont::Application.routes.draw do
   end
   
   get "/lists/:id/deleted" => "lists#deleted_tasks", :as => "deleted_tasks"
+  delete "/lists/:id/deleted" => "lists#deleted_tasks", :as => "deleted_tasks"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
