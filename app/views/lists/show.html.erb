@@ -1,5 +1,13 @@
-<div class = "list-header">
-  <h1><%= best_in_place @list, :title %></h1>
+<div id = "list-header">
+  <div id = "list-title">
+    <h1><%= best_in_place @list, :title %></h1>
+  </div>    
+  
+</div>
+  <div class = "form-container">
+    <div class = "form">
+      <%= render 'tasks/form' %>
+    </div>
     <div id = "filter-menu">	
      	<ul class="nav nav-pills">
         <li class="active">
@@ -10,15 +18,10 @@
         <li><a href="#">All</a></li>
       </ul>
     </div>
-  </div>
-    <div class = "form_container">
-      <div class = "form">
-        <%= render 'tasks/form' %>
-      </div>
-      <div class = "completed_tasks">
-        <%= button_to 'Completed Tasks', {:action => 'deleted_tasks'}, :method => :get, :class => "btn btn-primary"  %>
-      </div>
+    <div class = "completed_tasks">
+      <%= button_to 'Completed Tasks', {:action => 'deleted_tasks'}, :method => :get, :class => "btn btn-primary"  %>
     </div>
+  </div>
   <br>
   <br>
   <%= render 'list'%>
