@@ -3,6 +3,7 @@
   <% @tasks.each do |task| %>
   <tr id="row_<%= dom_id(task) %>" class="task">
     <td><%= best_in_place task, :description, :path => list_task_path(@list, task), :method => "put" %></td>
+    <td><div class="date"><%= task.list_id %></span></td>
     <td style = "text-align:right;"><%= link_to '', list_task_path(@list, task), :method => "delete", :class => 'icon-ok', :remote => true %></td>
   </tr>
 <% end %>

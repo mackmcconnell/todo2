@@ -456,10 +456,11 @@ $(document).ready(function() {
   $('#task_date').datepicker({
 	    format: 'mm-dd-yyyy'
 	});
+	$('#task_date').datepicker().on('changeDate', hideDatepickers);
+	  function hideDatepickers(){
+	$('.datepicker.dropdown-menu').hide();
+};
 });
 
-$('.date').datepicker().on('changeDate', hideDatepickers);
-function hideDatepickers(){
-$('.datepicker.dropdown-menu').hide();
-};
+	
 

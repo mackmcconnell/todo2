@@ -15,7 +15,6 @@ class TasksController < ApplicationController
     @task = Task.new(params[:task])
     @task.list_id = @list.id
     @task.alive = "yes"
-    # redirect_to list_path(params[:list_id]) if @task.save!
     if @task.save
       respond_to do |format|
         format.js { render 'create.js.erb' }
