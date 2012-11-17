@@ -1,29 +1,22 @@
-<div id = "list-header">
-  <div id = "list-title">
-    <h1><%= best_in_place @list, :title %></h1>
-  </div>    
-  
+<div id = "list-title" class="span12">
+  <h1><%= best_in_place @list, :title %></h1>
 </div>
-  <div class = "form-container">
-    <div class = "form">
-      <%= render 'tasks/form' %>
-    </div>
-    <div id = "filter-menu">	
-     	<ul class="nav nav-pills">
-        <li class="active">
-          <a href="#">Today</a>
-        </li>
+
+  <div id = "sub-nav" class="row span12">
+    <%= render 'tasks/form' %>
+    <div class = "nav-pills">
+      <ul class="nav nav-pills">
+        <li class="active"><a href="#">Today</a></li>
         <li><a href="#">Tomorrow</a></li>
         <li><a href="#">This Week</a></li>
         <li><a href="#">All</a></li>
       </ul>
     </div>
-    <div class = "completed_tasks">
+    <div class = "completed-tasks">
       <%= button_to 'Completed Tasks', {:action => 'deleted_tasks'}, :method => :get, :class => "btn btn-primary"  %>
     </div>
   </div>
-  <br>
-  <br>
+
   <%= render 'list'%>
   <%= link_to 'New Task', new_list_task_path(@list), :method => :get %>
 
