@@ -4,4 +4,5 @@ class Task < ActiveRecord::Base
 
   scope :active, where(:alive => "yes")
   scope :inactive, where(:alive => "no")
+
 end

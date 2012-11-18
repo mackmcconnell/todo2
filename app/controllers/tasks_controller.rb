@@ -11,8 +11,10 @@ class TasksController < ApplicationController
   end
 
   def create
+    task_params = params[:task]
+    task_params[:date] = formatted_date(params[:task][:date])
     @list = List.find(params[:list_id])
-    @task = Task.new(params[:task])
+    @task = Task.new(task_params)
     @task.list_id = @list.id
     @task.alive = "yes"
     if @task.save
