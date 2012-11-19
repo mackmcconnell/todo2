@@ -9,7 +9,7 @@ ToDont::Application.routes.draw do
   get "/lists/:id/deleted" => "lists#deleted_tasks", :as => "deleted_tasks"
 
   
-  root :to => "lists#index"
+  root :to => "users#sign_in"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
