@@ -1,5 +1,5 @@
 class Task < ActiveRecord::Base
-  attr_accessible :description, :list_id, :date, :date_american, :order, :alive
+  attr_accessible :description, :list_id, :date, :date_american, :order, :alive, :order
   belongs_to :list
 
   scope :active, where(:alive => true)
@@ -27,5 +27,6 @@ class Task < ActiveRecord::Base
 
   def assign_order
     self.order = self.id
+    self.save
   end
 end
