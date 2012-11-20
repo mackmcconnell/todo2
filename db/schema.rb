@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121120024644) do
+ActiveRecord::Schema.define(:version => 20121120040839) do
 
   create_table "lists", :force => true do |t|
     t.string   "title"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(:version => 20121120024644) do
     t.datetime "updated_at",                                   :null => false
     t.boolean  "alive",       :limit => 255, :default => true, :null => false
     t.date     "date"
+    t.integer  "order"
   end
 
   add_index "tasks", ["alive"], :name => "index_tasks_on_alive"

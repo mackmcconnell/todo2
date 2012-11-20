@@ -1,6 +1,6 @@
 <tr id="<%= dom_id(task, :row) %>" class="task">
   <td>
-    <%= best_in_place task, :description, :path => list_task_path(list, task), :method => "put" %>
+    <%= best_in_place task, :description, :path => list_task_path(@list, task), :method => "put" %>
   </td>
   <td>
     <span class="date">
@@ -8,6 +8,6 @@
     </span>
   </td>
   <td style="text-align:right;">
-    <%= link_to '', list_task_path(list, task), :method => "delete", :class => 'icon-ok', :remote => true %>
+    <%= link_to '', list_task_path(@list, task), :method => "delete", :class => 'icon-ok', :remote => true %>
   </td>
 </tr>

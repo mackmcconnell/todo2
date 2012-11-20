@@ -18,8 +18,13 @@ class ListsController < ApplicationController
   def show
     @list = List.find(params[:id])
     @task = @list.tasks.build
-
     @tasks = @list.tasks.active
+    #NEED TO GET TASKS TO DEFAULT TO BE ORDERED BY "ORDER"
+    # puts "========================================"
+    # @tasks = @tasks.to_a# .sort_by {|task| task.order }
+    # puts @tasks.each {|task| task.order }
+    # puts "========================================"
+    # # @tasks = @tasks.sort_by(&:order)
   end
 
   def edit
@@ -36,4 +41,5 @@ class ListsController < ApplicationController
     @list = List.find(params[:id])
     @tasks = @list.tasks.inactive
   end
+
 end
