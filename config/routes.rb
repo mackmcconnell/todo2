@@ -3,6 +3,7 @@ ToDont::Application.routes.draw do
   devise_for :users
 
   resources :lists do
+    collection { post :sort }
     resources :tasks
   end
   

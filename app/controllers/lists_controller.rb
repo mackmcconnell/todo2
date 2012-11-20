@@ -36,4 +36,10 @@ class ListsController < ApplicationController
     @tasks = @list.tasks.inactive
   end
 
+  def sort
+    params[:row_task].each_with_index do |id, index|
+      Task.update_all({order: index+1}, {id: id})
+    end
+  end
+
 end

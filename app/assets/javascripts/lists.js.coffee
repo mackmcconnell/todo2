@@ -3,4 +3,6 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 jQuery ->
   $('.best_in_place').best_in_place()
-  $(".table tbody.list_content").sortable()
+  $(".table tbody.list_content").sortable
+  	update: ->
+  	  $.post($(this).data('update-url'), $(this).sortable('serialize'))
