@@ -17,6 +17,8 @@ class ListsController < ApplicationController
 
   def show
     @list = List.find(params[:id])
+    @task = @list.tasks.build
+
     @tasks = @list.tasks.active
   end
 
@@ -34,5 +36,4 @@ class ListsController < ApplicationController
     @list = List.find(params[:id])
     @tasks = @list.tasks.inactive
   end
-
 end

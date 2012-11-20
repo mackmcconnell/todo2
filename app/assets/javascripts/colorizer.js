@@ -18,9 +18,3 @@
     });
   };
 })(jQuery);
-
-$(document).ready(function() {
-  $('h1 span.best_in_place').colorize().on("best_in_place:deactivate", function() {
-    $(this).colorize();
-  });
-});

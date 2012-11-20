@@ -8,17 +8,18 @@ class ApplicationController < ActionController::Base
   helper_method :formatted_date
 
   def date_in_english(task)
-  	case Date.parse(task.date.to_s)
-  	when Date.today
-  		task.date = "Today"
-  	when Date.today + 1
-  		task.date = "Tomorrow"
-  	when Date.today + 2
-  		task.date = "Two Days"
-  	when Date.today + 3
-  		task.date = "Three Days"
-  	else task.date
-  	end
+    case task.date - Date.today
+    when 0
+      "Today"
+    when 1
+      "Tomorrow"
+    when 2
+      "Two Days"
+    when 3
+      "Three Days"
+    else
+      task.date.strftime("%B %d")
+    end
   end
 
   helper_method :date_in_english
