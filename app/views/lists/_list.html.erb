@@ -1,5 +1,7 @@
 <table class="table table-hover">
-  <% @tasks.each do |task| %>
-    <%= render 'tasks/row', :task => task, :list => @list %>
-  <% end %>
+	<tbody class="list_content">
+	  <% @tasks.each do |task| %>
+	    <%= render 'tasks/row', :task => task, :list => @list %>
+	  <% end %>
+	</tbody>
 </table>
