@@ -18,7 +18,7 @@ class TasksController < ApplicationController
 
     if @task.save
       respond_to do |format|
-        format.js { render 'create.js.erb' }
+        format.js
       end
     end
   end

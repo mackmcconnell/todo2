@@ -1,6 +1,2 @@
-$('.table').append("<%= j(render :partial => 'row', :locals => { :task => @task }) %>");
+$('.table').append("<%= j(render 'tasks/row', :task => @task, :list => @list) %>");
 $('#task_description').val('');
-
-
-
-// row_<%= dom_id(task)
