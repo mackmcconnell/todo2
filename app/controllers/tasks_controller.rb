@@ -12,11 +12,10 @@ class TasksController < ApplicationController
 
   def create
     task_params = params[:task]
-    task_params[:date] = formatted_date(params[:task][:date])
+
     @list = List.find(params[:list_id])
-    @task = Task.new(task_params)
-    @task.list_id = @list.id
-    @task.alive = "yes"
+    @task = @list.tasks.new(task_params)
+
     if @task.save
       respond_to do |format|
         format.js { render 'create.js.erb' }
@@ -33,7 +32,9 @@ class TasksController < ApplicationController
     @tasks = @list.tasks.active
 
     @task = Task.find(params[:id])
-    @task.update_attribute(:alive, "no")
+
+    @task.deactivate!
+
     respond_to do |format|
       format.js { render 'delete.js.erb' }
     end
