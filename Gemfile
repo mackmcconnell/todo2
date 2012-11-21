@@ -32,6 +32,7 @@ gem "twitter-bootstrap-rails"
 gem "best_in_place"
 gem "devise"
 gem 'bootstrap-datepicker-rails'
+gem 'twilio-ruby'
 
 
 # To use ActiveModel has_secure_password

@@ -52,9 +52,24 @@ class TasksController < ApplicationController
     respond_with @list
   end
 
-
+  def send_sms
+    account_sid = "ACe3f08f26920946de8394b08ad903b161"
+    auth_token = "c86b4df4b436dbf4f4b202ef11196d46"
+    client = Twilio::REST::Client.new account_sid, auth_token
+     
+    from = "+18473803186" # Your Twilio number
+     
+    friends = {
+    "+18478996225" => "Curious George",
+    }
+    friends.each do |key, value|
+      client.account.sms.messages.create(
+        :from => from,
+        :to => key,
+        :body => "Hey #{value}, Monkey party at 6PM. Bring Bananas!"
+      ) 
+      puts "Sent message to #{value}"
+    end
+    redirect_to list_path
+  end
 end
-
-
-
-

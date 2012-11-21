@@ -4,8 +4,10 @@ ToDont::Application.routes.draw do
 
   resources :lists do
     collection { post :sort }
-    resources :tasks
+      resources :tasks
   end
+
+  get "/lists/:list_id/tasks/:id/send_sms" => "tasks#send_sms", :as => "send_sms_tasks"
   
   get "/lists/:id/deleted" => "lists#deleted_tasks", :as => "deleted_tasks"
 
