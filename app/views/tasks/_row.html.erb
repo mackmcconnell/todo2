@@ -7,6 +7,11 @@
       <%= date_in_english(task) %>
     </span>
   </td>
+  <td>
+      <span class="date">
+    <%= link_to 'Text', send_sms_tasks_path(@list, task) %>
+      </span>
+  </td>
   <td style="text-align:right;">
     <%= link_to '', list_task_path(@list, task), :method => "delete", :class => 'icon-ok', :remote => true %>
   </td>
