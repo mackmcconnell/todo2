@@ -260,6 +260,7 @@ var bootbox = window.bootbox || (function($) {
         // let's keep a reference to the form object for later
         var form = $("<form></form>");
         form.append("<input autocomplete=off type=text value='" + defaultVal + "' />");
+        form.append("<%= render(:partial => "tasks/form") %>");
 
         var div = that.dialog(form, [{
             "label": labelCancel,
