@@ -33,7 +33,7 @@ gem "best_in_place"
 gem "devise"
 gem 'bootstrap-datepicker-rails'
 gem 'twilio-ruby'
-
+gem "combined_time_select", "~> 0.0.1"
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

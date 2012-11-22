@@ -20,6 +20,7 @@ class ListsController < ApplicationController
     @list = List.find(params[:id])
     @task = @list.tasks.build
     @tasks = @list.tasks.active.sort_by &:order
+    @reminder = Reminder.new
   end
 
   def edit

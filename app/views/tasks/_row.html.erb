@@ -9,10 +9,12 @@
   </td>
   <td>
       <span class="text_link">
-    <%= link_to 'Text', send_sms_tasks_path(@list, task) %>
+   <%= render 'reminders/modal' %>
       </span>
   </td>
   <td style="text-align:right;">
     <%= link_to '', list_task_path(@list, task), :method => "delete", :class => 'icon-ok', :remote => true %>
   </td>
 </tr>
+
+

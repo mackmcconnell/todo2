@@ -43,6 +43,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.4.0)
+    combined_time_select (0.0.1)
     commonjs (0.2.6)
     devise (2.1.2)
       bcrypt-ruby (~> 3.0)
@@ -141,6 +142,7 @@ DEPENDENCIES
   best_in_place
   bootstrap-datepicker-rails
   coffee-rails (~> 3.2.1)
+  combined_time_select (~> 0.0.1)
   devise
   jquery-rails
   less-rails
