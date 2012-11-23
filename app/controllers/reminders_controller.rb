@@ -11,6 +11,7 @@ class RemindersController < ApplicationController
   end
 
   def create
+    @list = List.find(params[:list_id])
     @task = Task.find(params[:task_id])
     @reminder = Reminder.new(params[:reminder])
     @reminder.task_id = @task.id

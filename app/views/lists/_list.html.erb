@@ -1,7 +1,7 @@
 <table class="table table-hover">
-	<tbody class="list_content" data-update-url="<%= sort_lists_url%> ">
-	  <% @tasks.each do |task| %>
-	    <%= render 'tasks/row', :task => task, :list => @list %>
-	  <% end %>
-	</tbody>
+  <tbody class="list_content" data-update-url="<%= sort_lists_url%> ">
+    <% @tasks.each do |task| %>
+      <%= render :partial => 'tasks/row', :locals => {:task => task, :list => @list, :reminder => @reminder } %>
+    <% end %>
+  </tbody>
 </table>
