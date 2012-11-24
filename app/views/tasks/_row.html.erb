@@ -9,7 +9,7 @@
   </td>
   <td>
       <span class="text_link">
-   <%= render 'tasks/modal', :locals => { :reminder => @reminder} %>
+   <%= link_to "text", new_list_task_reminder_path(@list, task), :remote => true %>
       </span>
   </td>
   <td style="text-align:right;">

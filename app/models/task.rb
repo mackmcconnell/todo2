@@ -1,6 +1,7 @@
 class Task < ActiveRecord::Base
   attr_accessible :description, :list_id, :date, :date_american, :order, :alive, :order
   belongs_to :list
+  has_many :reminders
 
   scope :active, where(:alive => true)
   scope :inactive, where(:alive => false)
