@@ -1,5 +1,5 @@
 class Task < ActiveRecord::Base
-  attr_accessible :description, :list_id, :date, :date_american, :order, :alive, :order
+  attr_accessible :description, :list_id, :date, :date_american, :order, :alive, :order, :id
   belongs_to :list
   has_many :reminders
 

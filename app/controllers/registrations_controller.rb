@@ -5,7 +5,7 @@ class RegistrationsController < Devise::RegistrationsController
       super
     end
 
-  
+
   def create
     @user = User.new(params[:user])
     if @user.save
@@ -15,3 +15,4 @@ class RegistrationsController < Devise::RegistrationsController
       render :action => :new
     end
   end
+end
